@@ -1,4 +1,11 @@
-# jutils
+```ascii
+    _       _   _ _     
+   (_)_   _| |_(_) |___ 
+   | | | | | __| | / __|
+   | | |_| | |_| | \__ \
+  _/ |\__,_|\__|_|_|___/
+ |__/                                                     
+```
 
 A Python package of useful tools and utilities.
 
@@ -6,9 +13,19 @@ A Python package of useful tools and utilities.
 
 `jutils` is a simple `Python 3.10+` package which gives the user various tools. These tools are broken down into sub-modules in which the user can import individually.
 
-# Table of Contents
+# Table of contents
 
-- Sample
+- [Overview](#overview)
+- [Table of contents](#table-of-contents)
+- [Install \& use](#install--use)
+	- [Test](#test)
+	- [Build](#build)
+- [Objectives](#objectives)
+- [History](#history)
+	- [`0.0.0` (12.30.2022)](#000-12302022)
+- [Credits](#credits)
+- [Licence](#licence)
+- [Links](#links)
 
 # Install & use
 
@@ -26,7 +43,7 @@ A Python package of useful tools and utilities.
 - `timers`
 - `utilities`
 
-## Test`
+## Test
 
 1. Clone repository: `git clone https://github.com/JordanWelsman/jutils.git`
 2. Build module for testing: `python3 setup.py bdist_wheel`
