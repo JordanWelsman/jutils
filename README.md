@@ -13,7 +13,18 @@ A Python package of useful tools and utilities.
 # Install & use
 
 1. From terminal: `pip install jutils`
-2. From python environment: `from jutils import <time>
+2. From python environment: `from jutils import <submodule>` where `<submodule>` is:
+
+- `averages`
+- `calculators`
+- `converters`
+- `cryptography`
+- `formatting`
+- `language`
+- `logic`
+- `sorters`
+- `timers`
+- `utilities`
 
 ## Test`
 
@@ -25,7 +36,7 @@ A Python package of useful tools and utilities.
 ## Build
 
 1. Build module for distribution: `python3 setup.py bdist_wheel sdist`
-2. Push to PyPI: `pip inastall twine` `twine upload dist/*`
+2. Push to PyPI: `pip install twine` `twine upload dist/*`
 
 # Objectives
 
