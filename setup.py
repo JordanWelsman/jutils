@@ -39,7 +39,7 @@ setup(
     package_data={'jutils': jutils_package_data},
     python_requires=python_version,
     # jutils package information
-    classifiers={
+    classifiers=[
         'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
@@ -54,6 +54,6 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
         'Programming Language :: Python :: 3'
-    },
+    ],
     keywords='python, averages, calculators, converters, cryptography, formatting, language, logic, pipelining, sorters, timers, utilities'
 )
