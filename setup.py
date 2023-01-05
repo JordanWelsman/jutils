@@ -18,6 +18,7 @@ jutils_package_data = [
     'formatting/*',
     'language/*',
     'logic/*',
+    'pipelining/*',
     'sorters/*',
     'timers/*',
     'utilities'
@@ -54,5 +55,5 @@ setup(
         'Topic :: Utilities',
         'Programming Language :: Python :: 3'
     },
-    keywords='python, averages, calculators, converters, cryptography, formatting, language, logic, sorters, timers, utilities'
+    keywords='python, averages, calculators, converters, cryptography, formatting, language, logic, pipelining, sorters, timers, utilities'
 )
