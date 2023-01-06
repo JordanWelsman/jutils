@@ -7,5 +7,5 @@ test.py
 # Setuptools
 build/
 dist/
-jutils.egg-info/
+jutl.egg-info/
 **/__pycache__/
