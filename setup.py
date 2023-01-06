@@ -53,7 +53,9 @@ setup(
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
-        'Programming Language :: Python :: 3'
+        'Programming Language :: Python :: 3',
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11"
     ],
     keywords='python, averages, calculators, converters, cryptography, formatting, language, logic, pipelining, sorters, timers, utilities'
 )
