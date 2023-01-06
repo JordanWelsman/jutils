@@ -35,7 +35,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Jordan Welsman',
-    author_email='welsman@lbl.gov',
+    author_email='jordan.welsman@outlook.com',
     url='https://pypi.org/project/'+pypi_name+"/",
     download_url='https://github.com/JordanWelsman/jutils/tags',
     package_data={'jutils': jutils_package_data},
