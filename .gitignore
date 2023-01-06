@@ -1,0 +1,11 @@
+# Python
+.venv/
+
+# Package
+test.py
+
+# Setuptools
+build/
+dist/
+jutl.egg-info/
+**/__pycache__/
