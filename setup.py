@@ -28,7 +28,7 @@ jutils_package_data = [
 
 # Run setup function
 setup(
-    name='juts',
+    name=pypi_name,
     version=version,
     description='A Python package of useful tools and utilities.',
     license='MIT',
@@ -36,7 +36,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Jordan Welsman',
     author_email='welsman@lbl.gov',
-    url='https://pypi.org/project/jt/',
+    url='https://pypi.org/project/'+pypi_name+"/",
     download_url='https://github.com/JordanWelsman/jutils/tags',
     package_data={'jutils': jutils_package_data},
     python_requires=python_version,
