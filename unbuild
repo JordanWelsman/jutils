@@ -14,7 +14,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     rm -rf build # remove build directory if exists
     rm -rf dist # remove distribution directory if exists
-    rm -rf jutils.egg-info # remove egg info directory if exists
+    rm -rf jutl.egg-info # remove egg info directory if exists
     find . -name __pycache__ -type d -print0|xargs -0 rm -r -- # remove all pycache directories
     echo "Project successfully unbuilt."
 else
