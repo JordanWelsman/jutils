@@ -3,7 +3,7 @@ from setuptools import setup
 
 # Arguments
 git_name = "jutils"
-pypi_name = "juts"
+pypi_name = "jutl"
 version = "0.0.1"
 python_version = ">=3.10"
 
