@@ -1,15 +1,11 @@
+# Python
+.venv/
+
+# Package
+test.py
+
+# Setuptools
 build/
 dist/
 jutils.egg-info/
-jutils/averages/__pycache____/
-jutils/calculators/__pycache__/
-jutils/converters/__pycache__/
-jutils/cryptography/__pycache__/
-jutils/formatting/__pycache__/
-jutils/language/__pycache__/
-jutils/logic/__pycache__/
-jutils/pipelining/__pycache__/
-jutils/sorters/__pycache__/
-jutils/timers/__pycache__/
-jutils/utilities/__pycache__/
-test.py
+**/__pycache__/
