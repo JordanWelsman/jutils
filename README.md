@@ -18,18 +18,19 @@ A Python package of useful tools and utilities.
 - [Overview](#overview)
 - [Table of contents](#table-of-contents)
 - [Install \& use](#install--use)
-	- [Test](#test)
-	- [Build](#build)
+  - [Test](#test)
+  - [Build](#build)
 - [Objectives](#objectives)
 - [History](#history)
-	- [`0.0.0` (12.30.2022)](#000-12302022)
+  - [`0.0.0` (12.30.2022)](#000-12302022)
+  - [`0.0.1` (01.06.2023)](#001-01062023)
 - [Credits](#credits)
 - [Licence](#licence)
 - [Links](#links)
 
 # Install & use
 
-1. From terminal: `pip install jutils`
+1. From terminal: `pip install juts`
 2. From python environment: `from jutils import <submodule>` where `<submodule>` is:
 
 - `averages`
@@ -39,6 +40,7 @@ A Python package of useful tools and utilities.
 - `formatting`
 - `language`
 - `logic`
+- `pipelining`
 - `sorters`
 - `timers`
 - `utilities`
@@ -68,6 +70,13 @@ A Python package of useful tools and utilities.
 - Project created
 	- Basic readme created
 
+## `0.0.1` (01.06.2023)
+
+- Project uploaded to PyPI
+- Ability to unbuild project
+    - Unbuild script (`./unbuild`)
+- Hello, World! function
+
 # Credits
 
 `jutils` was created, developed, and is currently maintained by **Jordan Welsman**.
@@ -79,9 +88,9 @@ A Python package of useful tools and utilities.
 
 # Links
 
-:file_folder: [See this project on GitHub](https://github.com/JordanWelsman/mathplug/)
+:file_folder: [See this project on GitHub](https://github.com/JordanWelsman/jutils/)
 
-:gift: [See this project on PyPI](https://pypi.org/project/mathplug/)
+:gift: [See this project on PyPI](https://pypi.org/project/jutl/)
 
 :cat: [Follow me on GitHub](https://github.com/JordanWelsman/)
 
