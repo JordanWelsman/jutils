@@ -38,7 +38,7 @@ setup(
     author_email='jordan.welsman@outlook.com',
     url='https://pypi.org/project/'+pypi_name+"/",
     download_url='https://github.com/JordanWelsman/jutils/tags',
-    package_data={'jutils': jutils_package_data},
+    package_data={f'{pypi_name}': jutils_package_data},
     python_requires=python_version,
     # jutils package information
     classifiers=[
