@@ -4,7 +4,7 @@ from setuptools import setup
 # Arguments
 git_name = "jutils"
 pypi_name = "jutl"
-version = "0.0.1"
+version = "0.0.1a"
 python_version = ">=3.10"
 
 # Long description from README.md
