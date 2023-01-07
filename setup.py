@@ -23,7 +23,7 @@ jutils_package_data = [
     'pipelining/*',
     'sorters/*',
     'timers/*',
-    'utilities'
+    'utilities/*'
 ]
 
 # Run setup function
