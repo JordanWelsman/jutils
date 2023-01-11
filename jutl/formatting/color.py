@@ -23,8 +23,7 @@ class TextColor:
         print(f"\nTesting {__name__}.TextColor...\n")
         print(f"{TextColor.DEFAULT}█████{TextColor.BLACK}█████{TextColor.DARKGRAY}█████{TextColor.LIGHTGRAY}█████{TextColor.WHITE}█████{TextColor.DEFAULT}")
         print(f"{TextColor.RED}█████{TextColor.GREEN}█████{TextColor.YELLOW}█████{TextColor.BLUE}█████{TextColor.MAGENTA}█████{TextColor.CYAN}█████{TextColor.DEFAULT}")
-        print(f"{TextColor.LIGHTRED}█████{TextColor.LIGHTGREEN}█████{TextColor.LIGHTYELLOW}█████{TextColor.LIGHTBLUE}█████{TextColor.LIGHTMAGENTA}█████{TextColor.LIGHTCYAN}█████{TextColor.DEFAULT}")
-
+        print(f"{TextColor.LIGHTRED}█████{TextColor.LIGHTGREEN}█████{TextColor.LIGHTYELLOW}█████{TextColor.LIGHTBLUE}█████{TextColor.LIGHTMAGENTA}█████{TextColor.LIGHTCYAN}█████{TextColor.DEFAULT}\n")
 
 class BackgroundColor:
     # Background color constants
@@ -51,4 +50,4 @@ class BackgroundColor:
         print(f"\nTesting {__name__}.BackgroundColor...\n")
         print(f"{BackgroundColor.DEFAULT}|||||{BackgroundColor.BLACK}|||||{BackgroundColor.DARKGRAY}|||||{BackgroundColor.LIGHTGRAY}|||||{BackgroundColor.WHITE}|||||{BackgroundColor.DEFAULT}")
         print(f"{BackgroundColor.RED}|||||{BackgroundColor.GREEN}|||||{BackgroundColor.YELLOW}|||||{BackgroundColor.BLUE}|||||{BackgroundColor.MAGENTA}|||||{BackgroundColor.CYAN}|||||{BackgroundColor.DEFAULT}")
-        print(f"{BackgroundColor.LIGHTRED}|||||{BackgroundColor.LIGHTGREEN}|||||{BackgroundColor.LIGHTYELLOW}|||||{BackgroundColor.LIGHTBLUE}|||||{BackgroundColor.LIGHTMAGENTA}|||||{BackgroundColor.LIGHTCYAN}|||||{BackgroundColor.DEFAULT}")
+        print(f"{BackgroundColor.LIGHTRED}|||||{BackgroundColor.LIGHTGREEN}|||||{BackgroundColor.LIGHTYELLOW}|||||{BackgroundColor.LIGHTBLUE}|||||{BackgroundColor.LIGHTMAGENTA}|||||{BackgroundColor.LIGHTCYAN}|||||{BackgroundColor.DEFAULT}\n")
