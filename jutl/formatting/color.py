@@ -25,6 +25,7 @@ class TextColor:
         print(f"{TextColor.RED}█████{TextColor.GREEN}█████{TextColor.YELLOW}█████{TextColor.BLUE}█████{TextColor.MAGENTA}█████{TextColor.CYAN}█████{TextColor.DEFAULT}")
         print(f"{TextColor.LIGHTRED}█████{TextColor.LIGHTGREEN}█████{TextColor.LIGHTYELLOW}█████{TextColor.LIGHTBLUE}█████{TextColor.LIGHTMAGENTA}█████{TextColor.LIGHTCYAN}█████{TextColor.DEFAULT}\n")
 
+
 class BackgroundColor:
     # Background color constants
     DEFAULT         =       '\033[49m'
