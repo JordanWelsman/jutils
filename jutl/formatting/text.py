@@ -31,6 +31,3 @@ class Reset:
     INVERTED        =       '\033[27m'
     HIDDEN          =       '\033[28m'
     STRIKETHROUGH   =       '\033[29m'
-
-    def defaultify(text: str) -> str:
-        pass
