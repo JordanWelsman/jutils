@@ -1,3 +1,2 @@
-# Import hello_world.py from /utilities/ so hello_world() is
-# usable at 'from jutils import utilities' level.
+# These imports raise functions from file-level to submodule-level.
 from .hello_world import hello_world
