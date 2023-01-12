@@ -25,7 +25,7 @@ class Text:
         'WHITE':            '\033[97m'
         }
 
-    def test():
+    def test() -> None:
         print(f"\nTesting {__name__}.Text...\n")
         print(f"{Text.colors['DEFAULT']}█████{Text.colors['BLACK']}█████{Text.colors['DARKGRAY']}█████{Text.colors['LIGHTGRAY']}█████{Text.colors['WHITE']}█████{Text.colors['DEFAULT']}")
         print(f"{Text.colors['RED']}█████{Text.colors['GREEN']}█████{Text.colors['YELLOW']}█████{Text.colors['BLUE']}█████{Text.colors['MAGENTA']}█████{Text.colors['CYAN']}█████{Text.colors['DEFAULT']}")
@@ -55,7 +55,7 @@ class Background:
         'WHITE':            '\033[107m'
     }
     
-    def test():
+    def test() -> None:
         print(f"\nTesting {__name__}.Background...\n")
         print(f"{Background.colors['DEFAULT']}|||||{Background.colors['BLACK']}|||||{Background.colors['DARKGRAY']}|||||{Background.colors['LIGHTGRAY']}|||||{Background.colors['WHITE']}|||||{Background.colors['DEFAULT']}")
         print(f"{Background.colors['RED']}|||||{Background.colors['GREEN']}|||||{Background.colors['YELLOW']}|||||{Background.colors['BLUE']}|||||{Background.colors['MAGENTA']}|||||{Background.colors['CYAN']}|||||{Background.colors['DEFAULT']}")

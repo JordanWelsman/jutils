@@ -18,7 +18,7 @@ class Typography:
         'STRIKETHROUGH':    '\033[9m'
     }
 
-    def test():
+    def test() -> None:
         print(f"\nTesting {__name__}.Typogrddaphy...\n")
         print(f"{Typography.types['DEFAULT']}Default{Reset.types['ALL']}, {Typography.types['BOLD']}Bold{Reset.types['ALL']}, {Typography.types['DIM']}Dim{Reset.types['ALL']}, {Typography.types['ITALIC']}Italic{Reset.types['ALL']}, {Typography.types['UNDERLINED']}Underlined{Reset.types['ALL']},")
         print(f"{Typography.types['BLINKING1']}Blinking{Reset.types['ALL']}, {Typography.types['BLINKING2']}Blinking{Reset.types['ALL']}, {Typography.types['INVERTED']}Inverted{Reset.types['ALL']}, {Typography.types['HIDDEN']}Hidden{Reset.types['ALL']}, {Typography.types['STRIKETHROUGH']}Strikethrough{Reset.types['ALL']}\n")
