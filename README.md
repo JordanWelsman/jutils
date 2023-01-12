@@ -8,14 +8,16 @@
 ```
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/JordanWelsman/jutils)
+![GitHub Release Date](https://img.shields.io/github/release-date/JordanWelsman/jutils)
+![GitHub repo size](https://img.shields.io/github/repo-size/JordanWelsman/jutils)
+![GitHub](https://img.shields.io/github/license/JordanWelsman/jutils)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/JordanWelsman/jutils)
+
 ![PyPI](https://img.shields.io/pypi/v/jutl)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jutl)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/jutl)
-![GitHub](https://img.shields.io/github/license/JordanWelsman/jutils)
-
+![PyPI - Status](https://img.shields.io/pypi/status/jutl)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/jutl)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/JordanWelsman/jutils)
-![GitHub repo size](https://img.shields.io/github/repo-size/JordanWelsman/jutils)
 
 A Python package of useful tools and utilities.
 
