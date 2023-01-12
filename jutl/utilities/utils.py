@@ -1,6 +1,9 @@
+# External function visibility
+__all__ = ['hello_world']
+
 def hello_world(name: str = None) -> str:
     """
-    Greet the user.
+    Greets the user.
 
     Returns "Hello, 'user!'" where 'user' is 'name' if passed,
     or "Hello, World!" if 'name' is not passed.

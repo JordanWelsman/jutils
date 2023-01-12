@@ -4,7 +4,7 @@ from setuptools import setup
 # Arguments
 git_name = "jutils"
 pypi_name = "jutl"
-version = "0.0.1a"
+version = "0.2.0"
 python_version = ">=3.10"
 
 # Long description from README.md
@@ -23,7 +23,7 @@ jutils_package_data = [
     'pipelining/*',
     'sorters/*',
     'timers/*',
-    'utilities'
+    'utilities/*'
 ]
 
 # Run setup function
@@ -42,7 +42,7 @@ setup(
     python_requires=python_version,
     # jutils package information
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'License :: OSI Approved :: MIT License',
