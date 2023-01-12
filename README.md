@@ -7,6 +7,16 @@
  |__/                                                     
 ```
 
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/JordanWelsman/jutils)
+![PyPI](https://img.shields.io/pypi/v/jutl)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jutl)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/jutl)
+![GitHub](https://img.shields.io/github/license/JordanWelsman/jutils)
+
+![PyPI - Downloads](https://img.shields.io/pypi/dm/jutl)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/JordanWelsman/jutils)
+![GitHub repo size](https://img.shields.io/github/repo-size/JordanWelsman/jutils)
+
 A Python package of useful tools and utilities.
 
 # Overview
