@@ -19,8 +19,6 @@
 ![PyPI - Status](https://img.shields.io/pypi/status/jutl)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/jutl)
 
-A Python package of useful tools and utilities.
-
 # Overview
 
 `jutils` is a simple `Python 3.10+` package which gives the user various tools. These tools are broken down into sub-modules in which the user can import individually.
