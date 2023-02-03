@@ -62,67 +62,67 @@ class Stopwatch():
     """
     return iter(self.lap_times)
 
-  def __eq__(self, other):
+  def __eq__(self, other) -> bool:
     """
     Tells the interpreter how this class
     handles equal operators.
     """
     return self.total_time == other.total_time
 
-  def __ne__(self, other):
+  def __ne__(self, other) -> bool:
     """
     Tells the interpreter how this class
     handles not equal operators.
     """
     return self.total_time != other.total_time
 
-  def __gt__(self, other):
+  def __gt__(self, other) -> bool:
     """
     Tells the interpreter how this class
     handles greater than operators.
     """
     return self.total_time > other.total_time
 
-  def __ge__(self, other):
+  def __ge__(self, other) -> bool:
     """
     Tells the interpreter how this class
     handles greater or equal operators.
     """
     return self.total_time >= other.total_time
 
-  def __lt__(self, other):
+  def __lt__(self, other) -> bool:
     """
     Tells the interpreter how this class
     handles less than operators.
     """
     return self.total_time < other.total_time
 
-  def __le__(self, other):
+  def __le__(self, other) -> bool:
     """
     Tells the interpreter how this class
     handles less than or equal operators.
     """
     return self.total_time <= other.total_time
 
-  def __add__(self, other):
+  def __add__(self, other) -> float:
     """
     Tells the interpreter how to sum these objects.
     """
     return self.total_time + other.total_time
 
-  def __sub__(self, other):
+  def __sub__(self, other) -> float:
     """
     Tells the interpreter how to subtract these objects.
     """
     return self.total_time - other.total_time
 
-  def __mul__(self, multiplier):
+  def __mul__(self, multiplier) -> float:
     """
     Tells the interpreter how to subtract these objects.
     """
     return self.total_time * multiplier
 
-  def __truediv__(self, other):
+  def __truediv__(self, other) -> float:
     """
     Tells the interpreter how to subtract these objects.
     """
@@ -163,11 +163,11 @@ class Stopwatch():
     self.lap(self._stop_time)
 
 
-  def _calculate_time(self, t1: float, t2: float) -> float:
+  def _calculate_time(self, time1: float, time2: float) -> float:
     """
     Returns the difference in time where t2>t1.
     """
-    return t2 - t1
+    return time2 - time1
 
 
   def reset(self):

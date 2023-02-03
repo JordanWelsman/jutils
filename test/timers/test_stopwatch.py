@@ -211,12 +211,12 @@ class TestDunder():
 
   def test_mul(self):
     "Tests the multiply operator."
-    stopwatch1 = Stopwatch()
-    stopwatch1.start()
+    stopwatch = Stopwatch()
+    stopwatch.start()
     sleep(0.01)
-    stopwatch1.stop()
-    assert stopwatch1 * 2 == stopwatch1.total_time * 2
-    del(stopwatch1)
+    stopwatch.stop()
+    assert stopwatch * 2 == stopwatch.total_time * 2
+    del(stopwatch)
 
   def test_truediv(self):
     "Tests the divide operator."
@@ -231,6 +231,7 @@ class TestDunder():
     assert stopwatch1 / stopwatch2 == stopwatch1.total_time / stopwatch2.total_time
     del(stopwatch1)
     del(stopwatch2)
+
 
 class TestRobustness():
   def test_equal_list_sizes(self):
@@ -258,7 +259,10 @@ class TestRobustness():
     del(stopwatch)
     
   def test_stop_accuracy(self):
-    "Checks accuracy of calculate_time() method."
+    """
+    Checks accuracy of
+    calculate_time() method.
+    """
     stopwatch = Stopwatch()
     stopwatch.start()
     sleep(0.1)
