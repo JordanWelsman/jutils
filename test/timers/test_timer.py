@@ -201,13 +201,29 @@ class TestRobustness():
     resume methods work.
     """
     timer = Timer()
+    timer.start()
+    timer.pause()
+    timer.resume()
+    timer.stop()
+    assert timer.total_time > 0
+    del(timer)
 
   def test_multiple_pause(self):
     """
     Checks correct time is calculated
     with mulitple pauses & resumes.
     """
-    pass
+    timer = Timer()
+    timer.start()
+    timer.pause()
+    timer.resume()
+    timer.pause()
+    timer.resume()
+    timer.pause()
+    timer.resume()
+    timer.stop()
+    assert timer.total_time > 0
+    del(timer)
 
   def test_pause_wait(self):
     """
