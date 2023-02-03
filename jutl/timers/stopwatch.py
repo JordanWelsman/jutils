@@ -19,7 +19,6 @@ class Stopwatch():
     self._laps: list[float] = []
     self.lap_times: list[float] = []
 
-
   def __repr__(self) -> str:
     """
     Tells the interpreter how
@@ -36,7 +35,6 @@ class Stopwatch():
       else:
         return f"Stopwatch({self.name}, {round(self.total_time, 2)}s)"
 
-
   def __call__(self):
     """
     Tells the interpreter what to
@@ -49,14 +47,12 @@ class Stopwatch():
     else:
       print("There are no lap times.")
 
-
   def __len__(self) -> int:
     """
     Tells the interpreter what to
     consider this class' length.
     """
     return len(self._laps)
-
 
   def __iter__(self) -> iter:
     """
@@ -65,7 +61,73 @@ class Stopwatch():
     are called on this class.
     """
     return iter(self.lap_times)
-      
+
+  def __eq__(self, other):
+    """
+    Tells the interpreter how this class
+    handles equal operators.
+    """
+    return self.total_time == other.total_time
+
+  def __ne__(self, other):
+    """
+    Tells the interpreter how this class
+    handles not equal operators.
+    """
+    return self.total_time != other.total_time
+
+  def __gt__(self, other):
+    """
+    Tells the interpreter how this class
+    handles greater than operators.
+    """
+    return self.total_time > other.total_time
+
+  def __ge__(self, other):
+    """
+    Tells the interpreter how this class
+    handles greater or equal operators.
+    """
+    return self.total_time >= other.total_time
+
+  def __lt__(self, other):
+    """
+    Tells the interpreter how this class
+    handles less than operators.
+    """
+    return self.total_time < other.total_time
+
+  def __le__(self, other):
+    """
+    Tells the interpreter how this class
+    handles less than or equal operators.
+    """
+    return self.total_time <= other.total_time
+
+  def __add__(self, other):
+    """
+    Tells the interpreter how to sum these objects.
+    """
+    return self.total_time + other.total_time
+
+  def __sub__(self, other):
+    """
+    Tells the interpreter how to subtract these objects.
+    """
+    return self.total_time - other.total_time
+
+  def __mul__(self, multiplier):
+    """
+    Tells the interpreter how to subtract these objects.
+    """
+    return self.total_time * multiplier
+
+  def __truediv__(self, other):
+    """
+    Tells the interpreter how to subtract these objects.
+    """
+    return self.total_time / other.total_time
+
 
   def start(self):
     """
@@ -107,7 +169,7 @@ class Stopwatch():
     """
     return t2 - t1
 
-  
+
   def reset(self):
     """
     Resets all stopwatch attributes.
