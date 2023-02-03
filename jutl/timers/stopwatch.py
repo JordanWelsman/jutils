@@ -25,10 +25,16 @@ class Stopwatch():
     Tells the interpreter how
     to represent this class.
     """
-    if self.total_time is None:
-      return f"Stopwatch({self.name})"
+    if self.name is None:
+      if self.total_time is None:
+        return "Stopwatch()"
+      else:
+        return f"Stopwatch({round(self.total_time, 2)}s)"
     else:
-      return f"Stopwatch({self.name}, {round(self.total_time, 2)}s)"
+      if self.total_time is None:
+        return f"Stopwatch({self.name})"
+      else:
+        return f"Stopwatch({self.name}, {round(self.total_time, 2)}s)"
 
 
   def __call__(self):
@@ -92,8 +98,7 @@ class Stopwatch():
     """
     self._stop_time = time()
     self.total_time = self._calculate_time(self._start_time, self._stop_time)
-    if self._laps:
-      self.lap(self._stop_time)
+    self.lap(self._stop_time)
 
 
   def _calculate_time(self, t1: float, t2: float) -> float:
@@ -101,3 +106,14 @@ class Stopwatch():
     Returns the difference in time where t2>t1.
     """
     return t2 - t1
+
+  
+  def reset(self):
+    """
+    Resets all stopwatch attributes.
+    """
+    self._start_time = None
+    self._stop_time = None
+    self.total_time = None
+    self._laps.clear()
+    self.lap_times.clear()
