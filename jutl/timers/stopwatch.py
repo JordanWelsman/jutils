@@ -12,7 +12,7 @@ class Stopwatch():
   """
   def __init__(self, name: str = None):
     "Initialization method."
-    self.name : str = name
+    self.name: str = name
     self._start_time: float
     self._stop_time: float
     self.total_time: float = None
