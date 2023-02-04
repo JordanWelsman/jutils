@@ -7,11 +7,21 @@
  |__/                                                     
 ```
 
-A Python package of useful tools and utilities.
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/JordanWelsman/jutils)
+![GitHub Release Date](https://img.shields.io/github/release-date/JordanWelsman/jutils)
+![GitHub repo size](https://img.shields.io/github/repo-size/JordanWelsman/jutils)
+![GitHub](https://img.shields.io/github/license/JordanWelsman/jutils)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/JordanWelsman/jutils)
+
+![PyPI](https://img.shields.io/pypi/v/jutl)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/jutl)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/jutl)
+![PyPI - Status](https://img.shields.io/pypi/status/jutl)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/jutl)
 
 # Overview
 
-`jutils` is a simple `Python 3.10+` package which gives the user various tools. These tools are broken down into sub-modules in which the user can import individually.
+jutils is a simple `Python 3.10+` package which gives the user various tools. These tools are broken down into sub-modules in which the user can import individually.
 
 # Table of contents
 
@@ -19,11 +29,7 @@ A Python package of useful tools and utilities.
 - [Table of contents](#table-of-contents)
 - [Install \& use](#install--use)
   - [Test](#test)
-  - [Build](#build)
 - [Objectives](#objectives)
-- [History](#history)
-  - [`0.0.0` (12.30.2022)](#000-12302022)
-  - [`0.0.1` (01.06.2023)](#001-01062023)
 - [Credits](#credits)
 - [Licence](#licence)
 - [Links](#links)
