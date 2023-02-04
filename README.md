@@ -30,8 +30,8 @@ A Python package of useful tools and utilities.
 
 # Install & use
 
-1. From terminal: `pip install juts`
-2. From python environment: `from jutils import <submodule>` where `<submodule>` is:
+1. From terminal: `pip install jutl`
+2. From python environment: `from jutl import <submodule>` where `<submodule>` is:
 
 - `averages`
 - `calculators`
@@ -49,33 +49,13 @@ A Python package of useful tools and utilities.
 
 1. Clone repository: `git clone https://github.com/JordanWelsman/jutils.git`
 2. Build module for testing: `python3 setup.py bdist_wheel`
-3. Install module locally: `pip install jutils -e . dev`
+3. Install module locally: `pip install jutl -e . dev`
 4. Run tests with PyTest: `pytest`
-
-## Build
-
-1. Build module for distribution: `python3 setup.py bdist_wheel sdist`
-2. Push to PyPI: `pip install twine` `twine upload dist/*`
 
 # Objectives
 
 - Publish a package of tools I have developed that I use in production applications.
 - Help other users improve their workflows and contribute to more performant applications.
-
-# History
-
-## `0.0.0` (12.30.2022)
-
-- GitHub reposotiry created
-- Project created
-	- Basic readme created
-
-## `0.0.1` (01.06.2023)
-
-- Project uploaded to PyPI
-- Ability to unbuild project
-    - Unbuild script (`./unbuild`)
-- Hello, World! function
 
 # Credits
 
