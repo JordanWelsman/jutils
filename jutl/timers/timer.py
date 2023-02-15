@@ -11,7 +11,7 @@ class Timer():
   with time methods.
   """
   def __init__(self, name: str = None):
-    "Inisialization method."
+    "Initialization method."
     self.name: str = name
     self._start_time: float
     self._pause_time: float = None
