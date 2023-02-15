@@ -1,25 +1,28 @@
 # Module imports
+from jutl.pipelining.instructionpipeline import InstructionPipeline
 
 # External class visibility
 __all__ = ['DataPipeline']
 
 
-class DataPipeline(object):
+class DataPipeline(InstructionPipeline):
     """
-    Class which implements a data
-    pipeline by connecting the data
-    flow between passed functions.
+    Class which extends the instruction
+    pipeline and supports passing
+    multiple instances of data.
     """
-    def __init__(self, name: str = None):
-        "Initialization method."
-        self.name: str = name
-        self.functions: list[object] = []
-
-    def add_function(self, function: object):
-        "Adds a function to the pipeline."
-        self.functions.append(function)
-
-    def run(self, *args, **kwargs):
-        "Runs the pipeline."
-        for function in self.functions:
-            function(*args, **kwargs)
+    def __call__(self, *data):
+        """
+        Executes the pipeline
+        with passed data.
+        """
+        results: list = []
+        for datum in data:
+            match type(datum).__name__:
+                case "int" | "float":
+                    for function in self.functions:
+                        datum = function(datum)
+                    results.append(datum)
+                case other:
+                    print(f"Data type ({other}) is not supported.")
+        return results
