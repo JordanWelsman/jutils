@@ -11,6 +11,22 @@ class DataPipeline(InstructionPipeline):
     pipeline and supports passing
     multiple instances of data.
     """
+    def __repr__(self) -> str:
+        """
+        Tells the interpreter how
+        to represent this class.
+        """
+        if self.name is None:
+            if len(self.functions) < 1:
+                return f"DataPipeline()"
+            else:
+                return f"DataPipeline({len(self.functions)})"
+        else:
+            if len(self.functions) >= 1:
+                return f"DataPipeline({self.name}, {len(self.functions)})"
+            else:
+                return f"DataPipeline({self.name})"
+
     def __call__(self, *data):
         """
         Executes the pipeline

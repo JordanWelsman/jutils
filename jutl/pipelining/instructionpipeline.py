@@ -21,22 +21,31 @@ class InstructionPipeline():
         to represent this class.
         """
         if self.name is None:
-            return f"DataPipeline({len(self.functions)})"
+            if len(self.functions) < 1:
+                return f"InstructionPipeline()"
+            else:
+                return f"InstructionPipeline({len(self.functions)})"
         else:
-            return f"DataPipeline({self.name}, {len(self.functions)})"
+            if len(self.functions) >= 1:
+                return f"InstructionPipeline({self.name}, {len(self.functions)})"
+            else:
+                return f"InstructionPipeline({self.name})"
     
-    def __call__(self, data) -> None:
+    def __call__(self, data: None) -> None:
         """
         Executes the pipeline
         with passed data.
         """
-        match type(data).__name__:
-            case "int" | "float":
-                for function in self.functions:
-                    data = function(data)
-            case other:
-                print(f"Data type ({other}) is not supported.")
-        return data
+        if len(self.functions) < 1:
+            return data
+        else:
+            match type(data).__name__:
+                case "int" | "float":
+                    for function in self.functions:
+                        data = function(data)
+                case other:
+                    print(f"Data type ({other}) is not supported.")
+            return data
     
     def __len__(self) -> int:
         """
@@ -54,25 +63,30 @@ class InstructionPipeline():
         return iter(self.functions)
 
 
-    def add(self, function: object):
+    def add(self, *functions: object):
         """
         Adds a function to the pipeline.
         """
-        self.functions.append(function)
+        for function in functions:
+            self.functions.append(function)
 
     
     def list(self) -> None:
         """
         Lists all functions in the pipeline.
         """
-        print(f.__name__ for f in self.functions)
+        print(function.__name__ for function in self.functions)
 
     
-    def remove(self, function: object):
+    def remove(self, *functions: object):
         """
         Removes a function from the pipeline.
         """
-        self.functions.remove(function)
+        for function in functions:
+            if function in self.functions:
+                self.functions.remove(function)
+            else:
+                continue
 
     
     def clear(self):
