@@ -8,13 +8,13 @@ class TestInit():
     def test_def(self):
         "Tests if an object can be created from the Stopwatch class."
         stopwatch = Stopwatch()
-        assert stopwatch is not None
+        assert isinstance(stopwatch, Stopwatch)
         del(stopwatch)
   
     def test_name(self):
         "Tests if naming a stopwatch works."
         stopwatch = Stopwatch()
-        assert stopwatch.name == None
+        assert stopwatch.name is None
         del(stopwatch)
 
         stopwatch = Stopwatch(test_name)
