@@ -4,7 +4,7 @@ from setuptools import setup
 # Arguments
 git_name = "jutils"
 pypi_name = "jutl"
-version = "0.4.0" # update __init__.py
+version = "0.4.1" # update __init__.py
 python_version = ">=3.10"
 
 # Long description from README.md
@@ -17,6 +17,7 @@ jutils_package_data = [
     'calculators/*',
     'converters/*',
     'cryptography/*',
+    'datastructures/*',
     'formatting/*',
     'language/*',
     'logic/*',
