@@ -17,6 +17,7 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/wiki/Version-History)
 [![GitHub](https://img.shields.io/github/license/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/blob/main/LICENSE.md)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/commits/main)
+[![GitHub wiki](https://img.shields.io/badge/wiki-jutils-blueviolet?style=for-the-badge)](https://github.com/JordanWelsman/jutils/wiki)
 
 </div>
 <div align="center">
