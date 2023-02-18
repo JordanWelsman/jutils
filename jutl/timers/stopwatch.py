@@ -1,4 +1,5 @@
 # Module imports
+from jutl.formatting import apply
 from time import time
 
 # External class visibility
@@ -35,7 +36,7 @@ class Stopwatch():
             else:
                 return f"Stopwatch({self.name}, {round(self.total_time, 2)}s)"
 
-    def __call__(self):
+    def __call__(self, color: str = None):
         """
         Tells the interpreter what to
         do when an object of this
@@ -43,7 +44,10 @@ class Stopwatch():
         """
         if self.lap_times:
             for n, time in enumerate(self.lap_times):
-                print(f"Lap {n+1}: {round(time, 2)}s")
+                if color:
+                    print(apply(text=f"Lap {n+1}: {round(time, 2)}s", text_color=color))
+                else:
+                    print(f"Lap {n+1}: {round(time, 2)}s")
         else:
             print("There are no lap times.")
 
@@ -129,19 +133,22 @@ class Stopwatch():
         return self.total_time / other.total_time
 
 
-    def start(self):
+    def start(self, message: str = None, color: str = None):
         """
-        Starts the stopwatch by
-        initializing an object attribute.
+        Starts the stopwatch and
+        optionally prints a message.
         """
         self._start_time = time()
+        if message:
+            print(apply(text=message, text_color=color) if color else print(message))
 
 
-    def lap(self, lap_time: float = None):
+    def lap(self, lap_time: float = None, message: str = None, color: str = None):
         """
-        Adds the current time to the lap time
-        list and records the time since the
-        start or time of the last recorded lap.
+        Adds the current time to the lap
+        time list, records the time since
+        the start or time of the last recorded
+        lap, and optionally prints a message.
         """
         if lap_time:
             self._laps.append(lap_time)
@@ -151,16 +158,21 @@ class Stopwatch():
             self.lap_times.append(self._calculate_time(self._start_time, self._laps[-1]))
         else:
             self.lap_times.append(self._calculate_time(self._laps[-2], self._laps[-1]))
+        if message:
+            print(apply(text=message, text_color=color) if color else print(message))
 
 
-    def stop(self):
+    def stop(self, message: str = None, color: str = None):
         """
-        Stops the stopwatch and calculates
-        the total time passed.
+        Stops the stopwatch, calculates
+        the total time passed, and
+        optionally prints a message.
         """
         self._stop_time = time()
         self.total_time = self._calculate_time(self._start_time, self._stop_time)
-        self.lap(self._stop_time)
+        self.lap(self._stop_time) # add final lap time and calculate lap difference
+        if message:
+            print(apply(text=message, text_color=color) if color else print(text=message))
 
 
     def _calculate_time(self, time1: float, time2: float) -> float:
@@ -170,12 +182,15 @@ class Stopwatch():
         return time2 - time1
 
 
-    def reset(self):
+    def reset(self, message: str = None, color: str = None):
         """
-        Resets all stopwatch attributes.
+        Resets all stopwatch attributes
+        and optionally prints a message.
         """
         self._start_time = None
         self._stop_time = None
         self.total_time = None
         self._laps.clear()
         self.lap_times.clear()
+        if message:
+            print(apply(text=message, text_color=color) if color else print(text=message))

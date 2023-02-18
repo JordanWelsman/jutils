@@ -1,5 +1,6 @@
 # jutils/test/pipelining/test_instructionpipeline.py
 from jutl.pipelining import InstructionPipeline
+from jutl.exceptions import EmptyPipelineError, MissingInputError
 
 test_name: str = "Test name"
 def func(num):
@@ -80,7 +81,19 @@ class TestDunder():
     def test_call(self):
         "Tests what is output when object is called."
         pipeline = InstructionPipeline()
-        assert pipeline(1) == 1
+        try:
+            pipeline(1)
+        except EmptyPipelineError:
+            pass
+        else: assert False, "Expected an EmptyPipelineError."
+        del(pipeline)
+
+        pipeline = InstructionPipeline(func)
+        try:
+            pipeline()
+        except MissingInputError:
+            pass
+        else: assert False, "Expected a MissingInputError."
         del(pipeline)
 
         pipeline = InstructionPipeline(func)

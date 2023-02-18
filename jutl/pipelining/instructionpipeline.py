@@ -1,4 +1,5 @@
 # Module imports
+from jutl.exceptions import EmptyPipelineError, MissingInputError
 
 # External class visibility
 __all__ = ['InstructionPipeline']
@@ -31,21 +32,24 @@ class InstructionPipeline():
             else:
                 return f"InstructionPipeline({self.name})"
     
-    def __call__(self, data: None) -> None:
+    def __call__(self, data = None) -> None:
         """
         Executes the pipeline
         with passed data.
         """
+        if data is None:
+            raise MissingInputError("No input data passed to instruction pipeline.")
         if len(self.functions) < 1:
-            return data
+            raise EmptyPipelineError("No functions added to instruction pipeline.")
         else:
             match type(data).__name__:
                 case "int" | "float":
                     for function in self.functions:
                         data = function(data)
                 case other:
-                    print(f"Data type ({other}) is not supported.")
+                    raise TypeError(f"Unknown data type passed to instruction pipeline: {other}.")
             return data
+
     
     def __len__(self) -> int:
         """

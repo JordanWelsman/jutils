@@ -1,5 +1,6 @@
 # jutils/test/pipelining/test_datapipeline.py
 from jutl.pipelining import DataPipeline
+from jutl.exceptions import EmptyPipelineError, MissingInputError
 
 test_name: str = "Test name"
 def func(num):
@@ -80,7 +81,19 @@ class TestDunder():
     def test_call_single(self):
         "Tests what is output when object is called with single input."
         pipeline = DataPipeline()
-        assert pipeline(1) == [1]
+        try:
+            pipeline(1)
+        except EmptyPipelineError:
+            pass
+        else: assert False, "Expected an EmptyPipelineError."
+        del(pipeline)
+
+        pipeline = DataPipeline(func)
+        try:
+            pipeline()
+        except MissingInputError:
+            pass
+        else: assert False, "Expected a MissingInputError."
         del(pipeline)
 
         pipeline = DataPipeline(func)
@@ -102,7 +115,19 @@ class TestDunder():
     def test_call_multiple(self):
         "Tests what is output when object is called with multiple inputs."
         pipeline = DataPipeline()
-        assert pipeline(1, 2, 3) == [1, 2, 3]
+        try:
+            pipeline(1)
+        except EmptyPipelineError:
+            pass
+        else: assert False, "Expected an EmptyPipelineError."
+        del(pipeline)
+
+        pipeline = DataPipeline(func)
+        try:
+            pipeline()
+        except MissingInputError:
+            pass
+        else: assert False, "Expected a MissingInputError."
         del(pipeline)
 
         pipeline = DataPipeline(func)

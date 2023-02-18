@@ -1,5 +1,6 @@
 from .color import Text, Background
 from .text import Typography, Reset
+from jutl.exceptions import InvalidFormattingError
 
 __all__ = ['apply', 'test']
 
@@ -7,11 +8,20 @@ def apply(text: str, text_color: str = None, background_color: str = None, typog
     formatting = ""
 
     if text_color is not None:
-        formatting += Text.colors[text_color.upper()] if text_color.upper() in Text.colors else ''
+        if text_color.upper() in Text.colors:
+            formatting += Text.colors[text_color.upper()]
+        else:
+            raise InvalidFormattingError(f"Color not found: {text_color}")
     if background_color is not None:
-        formatting += Background.colors[background_color.upper()] if background_color.upper() in Background.colors else ''
+        if background_color.upper() in Background.colors:
+            formatting += Background.colors[background_color.upper()]
+        else:
+            raise InvalidFormattingError(f"Color not found: {background_color}")
     if typography is not None:
-        formatting += Typography.types[typography.upper()] if typography.upper() in Typography.types else ''
+        if typography.upper() in Typography.types:
+            formatting += Typography.types[typography.upper()]
+        else:
+            raise InvalidFormattingError(f"Type not found: {typography}")
     return formatting + text + Reset.types['ALL']
 
 def test():
