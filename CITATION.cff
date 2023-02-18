@@ -1,0 +1,17 @@
+# CITATION.cff
+
+# Citation Information
+preferred-citation: |
+  jutils. (2023). GitHub repository. https://github.com/JordanWelsman/jutils
+
+# Contributors
+contributors:
+- name: Jordan Welsman
+  affiliation: Bournemouth University
+  orcid: 0000-0002-2882-594X
+
+# Version
+version: 0.4.1
+
+# Date
+date-released: 2023-01-18
