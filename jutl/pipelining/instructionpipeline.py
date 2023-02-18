@@ -32,13 +32,13 @@ class InstructionPipeline():
             else:
                 return f"InstructionPipeline({self.name})"
     
-    def __call__(self, data: None) -> None:
+    def __call__(self, data = None) -> None:
         """
         Executes the pipeline
         with passed data.
         """
         if data is None:
-            raise MissingInputError(f"No input data passed to instruction pipeline.")
+            raise MissingInputError("No input data passed to instruction pipeline.")
         if len(self.functions) < 1:
             raise EmptyPipelineError("No functions added to instruction pipeline.")
         else:

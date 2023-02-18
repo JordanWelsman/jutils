@@ -35,7 +35,7 @@ class DataPipeline(InstructionPipeline):
         """
         results: list = []
         if len(data) < 1:
-            raise MissingInputError(f"No input data passed to data pipeline.")
+            raise MissingInputError("No input data passed to data pipeline.")
         if len(self.functions) < 1:
             raise EmptyPipelineError("No functions added to data pipeline.")
         for datum in data:
