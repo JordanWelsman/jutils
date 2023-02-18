@@ -1,4 +1,5 @@
 # Module imports
+from jutl.formatting import apply
 from time import time, sleep
 
 # External class visibility
@@ -35,14 +36,17 @@ class Timer():
             else:
                 return f"Timer({self.name}, {round(self.total_time, 2)}s)"
     
-    def __call__(self):
+    def __call__(self, color: str = None):
         """
         Tells the interpreter what to
         do when an object of this
         class is called directly.
         """
         if self.total_time:
-            print(f"{self.name} total time: {round(self.total_time, 2)}s")
+            if color:
+                print(apply(text=f"{self.name} total time: {round(self.total_time, 2)}s", text_color=color))
+            else:
+                print(f"{self.name} total time: {round(self.total_time, 2)}s")
         else:
             print("There is no recorded time.")
     
@@ -125,42 +129,53 @@ class Timer():
         return self.total_time / other.total_time
 
 
-    def start(self):
+    def start(self, message: str = None, color: str = None):
         """
-        Starts the timer by
-        initializing an object attribute.
+        Starts the timer and
+        optionally prints a message.
         """
         self._start_time = time()
+        if message:
+            print(apply(text=message, text_color=color) if color else print(message))
 
 
-    def pause(self, duration: float = None):
+    def pause(self, duration: float = None, message: str = None, color: str = None):
         """
-        Pauses the timer.
+        Pauses the timer and
+        optionally prints a message.
         """
         self._pause_time = time()
         if duration:
             sleep(duration)
+        if message:
+            print(apply(text=message, text_color=color) if color else print(text=message))
 
 
-    def resume(self):
+    def resume(self, message: str = None, color: str = None):
         """
-        Resumes the timer.
+        Resumes the timer and
+        optionally prints a message.
         """
         if self._paused_time:
             self._paused_time += self._calculate_time(self._pause_time, time())
         else:
             self._paused_time = self._calculate_time(self._pause_time, time())
+        if message:
+            print(apply(text=message, text_color=color) if color else print(text=message))
 
 
-    def stop(self):
+    def stop(self, message: str = None, color: str = None):
         """
-        Stops the timer and calculates
-        the total time passed.
+        Stops the timer, calculates
+        the total time passed, and
+        optionally prints a message.
         """
         if self._pause_time and not self._paused_time: # if stopped while paused
             self.resume()
         self._stop_time = time()
         self.total_time = self._calculate_time(self._start_time, self._stop_time)
+        if message:
+            print(apply(text=message, text_color=color) if color else print(text=message))
 
 
     def _calculate_time(self, time1: float, time2: float) -> float:
@@ -170,12 +185,15 @@ class Timer():
         return time2 - time1
 
 
-    def reset(self):
+    def reset(self, message: str = None, color: str = None):
         """
-        Resets all timer attributes.
+        Resets all timer attributes
+        and optionally prints a message.
         """
         self._start_time = None
         self._pause_time = None
         self._paused_time = None
         self._stop_time = None
         self.total_time = None
+        if message:
+            print(apply(text=message, text_color=color) if color else print(text=message))
