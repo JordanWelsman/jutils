@@ -64,6 +64,8 @@ jutils is a simple `Python 3.10+` package which gives the user various tools. Th
 - `calculators`
 - `converters`
 - `cryptography`
+- `datastructures`
+- `ecxeptions`
 - `formatting`
 - `language`
 - `logic`
