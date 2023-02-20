@@ -79,7 +79,8 @@ class InstructionPipeline():
         """
         Lists all functions in the pipeline.
         """
-        print(function.__name__ for function in self.functions)
+        for function in self.functions:
+            print(function.__name__)
 
     
     def remove(self, *functions: object):
