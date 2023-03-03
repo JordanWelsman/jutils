@@ -103,7 +103,7 @@ class Stack(object):
         """
         Tells the interpreter how to sum these objects.
         """
-        self.extend(other=other)
+        return self.extend(other=other)
 
     def __sub__(self, other) -> float:
         """
@@ -121,11 +121,12 @@ class Stack(object):
         self._stack.append(item)
 
 
-    def pop(self):
+    def pop(self) -> object:
         """
         Removes the last added item from the stack.
         """
         self._stack.remove(self.top)
+        return self.top
 
 
     @property
@@ -137,7 +138,7 @@ class Stack(object):
         """
         Extends this stack with another stack.
         """
-        for item in reversed(other._stack):
+        for item in other._stack:
             self.push(item)
         return self
     
