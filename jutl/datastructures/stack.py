@@ -1,0 +1,143 @@
+# Module imports
+from __future__ import annotations
+from jutl.formatting import apply
+
+# External class visibility
+__all__ = ['Stack']
+
+
+class Stack(object):
+    """
+    Class which implements a
+    first-in; first-out stack object
+    with stack methods.
+    """
+    def __init__(self, name: str = None):
+        "Initialization method."
+        self.name = name
+        self._stack = []
+
+    def __repr__(self) -> str:
+        """
+        Tells the interpreter how
+        to represent this class.
+        """
+        if self.name is None:
+            if len(self) == 0:
+                return "Stack()"
+            else:
+                return f"Stack({self._stack})"
+
+        else:
+            if len(self) == 0:
+                return f"Stack({self.name})"
+            else:
+                return f"Stack({self.name}, {self._stack})"
+        
+    def __call__(self) -> list:
+        """
+        Tells the interpreter what to
+        do when an object of this
+        class is called directly.
+        """
+        return self._stack
+    
+    def __len__(self) -> int:
+        """
+        Tells the interpreter what to
+        consider this class' length.
+        """
+        return len(self._stack)
+    
+    def __iter__(self) -> iter:
+        """
+        Tells the interpreter what to
+        iterate over when iterator methods
+        are called on this class.
+        """
+        raise NotImplementedError("Stacks are not iterable.")
+    
+    def __eq__(self, other) -> bool:
+        """
+        Tells the interpreter how this class
+        handles equal operators.
+        """
+        return self._stack == other._stack
+    
+    def __ne__(self, other) -> bool:
+        """
+        Tells the interpreter how this class
+        handles not equal operators.
+        """
+        return self._stack != other._stack
+
+    def __gt__(self, other) -> bool:
+        """
+        Tells the interpreter how this class
+        handles greater than operators.
+        """
+        return len(self) > len(other)
+
+    def __ge__(self, other) -> bool:
+        """
+        Tells the interpreter how this class
+        handles greater or equal operators.
+        """
+        return len(self) >= len(other)
+
+    def __lt__(self, other) -> bool:
+        """
+        Tells the interpreter how this class
+        handles less than operators.
+        """
+        return len(self) < len(other)
+
+    def __le__(self, other) -> bool:
+        """
+        Tells the interpreter how this class
+        handles less than or equal operators.
+        """
+        return len(self) <= len(other)
+
+    def __add__(self, other) -> list:
+        """
+        Tells the interpreter how to sum these objects.
+        """
+        self.extend(other=other)
+
+    def __sub__(self, other) -> float:
+        """
+        Tells the interpreter how to subtract these objects.
+        """
+        for item in other:
+            self._stack.remove(item)
+        return self
+
+
+    def push(self, item: object):
+        """
+        Pushes an item onto the stack.
+        """
+        self._stack.append(item)
+
+
+    def pop(self):
+        """
+        Removes the last added item from the stack.
+        """
+        self._stack.remove(self.top)
+
+
+    @property
+    def top(self) -> object:
+        return self._stack[-1]
+
+
+    def extend(self, other: Stack) -> Stack:
+        """
+        Extends this stack with another stack.
+        """
+        for item in reversed(other._stack):
+            self.push(item)
+        return self
+    
