@@ -68,9 +68,9 @@ class TestDunder():
     def test_equal(self):
         "Tests the overridden equal function."
         stack1 = Stack()
-        stack1.start()
-        stack1.stop()
-        stack2 = stack1
+        stack1.push(test_item, test_item, test_item)
+        stack2 = Stack()
+        stack2.push(test_item, test_item, test_item)
         assert stack1 == stack2
         del(stack1)
         del(stack2)
@@ -79,11 +79,8 @@ class TestDunder():
         "Tests the overridden not equal function."
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item)
         assert stack1 != stack2
         del(stack1)
         del(stack2)
@@ -92,11 +89,8 @@ class TestDunder():
         "Tests the overridden greater than function."
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item)
         assert stack1 > stack2
         del(stack1)
         del(stack2)
@@ -105,20 +99,17 @@ class TestDunder():
         "Tests the overridden greater or equal function."
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
-        assert stack1 > stack2
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item)
+        assert stack1 >= stack2
         del(stack1)
         del(stack2)
 
         stack1 = Stack()
-        stack1.start()
-        stack1.stop()
-        stack2 = stack1
-        assert stack1 == stack2
+        stack2 = Stack()
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item, test_item)
+        assert stack1 >= stack2
         del(stack1)
         del(stack2)
 
@@ -126,11 +117,8 @@ class TestDunder():
         "Tests the overridden less than function."
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item)
         assert stack2 < stack1
         del(stack1)
         del(stack2)
@@ -139,20 +127,17 @@ class TestDunder():
         "Tests the overridden less or equal function."
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
-        assert stack2 < stack1
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item)
+        assert stack2 <= stack1
         del(stack1)
         del(stack2)
 
         stack1 = Stack()
-        stack1.start()
-        stack1.stop()
-        stack2 = stack1
-        assert stack1 == stack2
+        stack2 = Stack()
+        stack1.push(test_item, test_item, test_item)
+        stack2.push(test_item, test_item, test_item)
+        assert stack1 <= stack2
         del(stack1)
         del(stack2)
 
@@ -160,24 +145,28 @@ class TestDunder():
         "Tests the sum operator."
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
-        assert stack1 + stack2 == stack1.total_time + stack2.total_time
+        stack3 = Stack()
+        test_stack = Stack()
+        stack1.push(test_item, test_item)
+        stack2.push(test_item, test_item)
+        stack3.push(test_item, test_item)
+        test_stack.push(test_item, test_item, test_item, test_item, test_item, test_item)
+        assert stack1 + stack2 + stack3 == test_stack
         del(stack1)
         del(stack2)
+        del(stack3)
+        del(test_stack)
 
-    def test_sub(self):
-        "Tests the subtract operator."
+
+class TestRobustness():
+    def test_extend(self):
+        """
+        Checks if the extend
+        method works correctly.
+        """
         stack1 = Stack()
         stack2 = Stack()
-        stack1.start()
-        sleep(0.01)
-        stack1.stop()
-        stack2.start()
-        stack2.stop()
-        assert stack1 - stack2 == stack1.total_time - stack2.total_time
-        del(stack1)
-        del(stack2)
+        test_stack = Stack()
+        stack1.push(test_item, test_item)
+        stack2.push(test_item, test_item)
+
