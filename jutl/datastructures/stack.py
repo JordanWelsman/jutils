@@ -105,20 +105,13 @@ class Stack(object):
         """
         return self.extend(other=other)
 
-    def __sub__(self, other) -> float:
-        """
-        Tells the interpreter how to subtract these objects.
-        """
-        for item in other:
-            self._stack.remove(item)
-        return self
 
-
-    def push(self, item: object):
+    def push(self, *args: object):
         """
         Pushes an item onto the stack.
         """
-        self._stack.append(item)
+        for item in args:
+            self._stack.append(item)
 
 
     def pop(self) -> object:
