@@ -169,4 +169,6 @@ class TestRobustness():
         test_stack = Stack()
         stack1.push(test_item, test_item)
         stack2.push(test_item, test_item)
+        test_stack.push(test_item, test_item, test_item, test_item)
+        assert stack1.extend(stack2) == test_stack
 
