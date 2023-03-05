@@ -125,7 +125,10 @@ class Stack(object):
 
     @property
     def top(self) -> object:
-        return self._stack[-1]
+        if len(self) > 0:
+            return self._stack[-1]
+        else:
+            raise IndexError("Stack is empty.")
 
 
     def extend(self, other: Stack) -> Stack:
