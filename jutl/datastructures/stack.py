@@ -118,13 +118,17 @@ class Stack(object):
         """
         Removes the last added item from the stack.
         """
+        popped = self.top
         self._stack.remove(self.top)
-        return self.top
+        return popped
 
 
     @property
     def top(self) -> object:
-        return self._stack[-1]
+        if len(self) > 0:
+            return self._stack[-1]
+        else:
+            raise IndexError("Stack is empty.")
 
 
     def extend(self, other: Stack) -> Stack:
