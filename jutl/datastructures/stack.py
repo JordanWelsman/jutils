@@ -118,8 +118,9 @@ class Stack(object):
         """
         Removes the last added item from the stack.
         """
+        popped = self.top
         self._stack.remove(self.top)
-        return self.top
+        return popped
 
 
     @property

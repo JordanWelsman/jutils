@@ -159,6 +159,44 @@ class TestDunder():
 
 
 class TestRobustness():
+    def test_push(self):
+        """
+        Checks if pushing an
+        item to a stack works.
+        """
+        stack = Stack()
+        stack.push(test_item)
+        assert len(stack) == 1
+        del(stack)
+
+        stack = Stack()
+        stack.push(test_item)
+        stack.push(test_item)
+        assert len(stack) == 2
+        del(stack)
+
+        stack = Stack()
+        stack.push(test_item, test_item, test_item)
+        assert len(stack) == 3
+        del(stack)
+
+    def test_pop(self):
+        """
+        Checks if popping an
+        item from a stack works.
+        """
+        stack = Stack()
+        stack.push(test_item, test_item, test_item)
+        assert stack.pop() == test_item
+        assert len(stack) == 2
+        del(stack)
+
+        stack = Stack()
+        stack.push(test_item)
+        assert stack.pop() == test_item
+        assert len(stack) == 0
+        del(stack)
+
     def test_extend(self):
         """
         Checks if the extend
