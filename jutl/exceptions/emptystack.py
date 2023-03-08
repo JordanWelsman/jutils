@@ -1,5 +1,5 @@
 # Module imports
-from jutlexception import JutilsException
+from .jutlexception import JutilsException
 
 # External class visibility
 __all__ = ['EmptyStackError']
