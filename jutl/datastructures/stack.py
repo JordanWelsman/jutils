@@ -179,8 +179,11 @@ class Stack(object):
         """
         Returns whether the stack is full.
         """
-        if len(self) >= self._capacity:
-            return True
+        if self._capacity is not None:
+            if len(self) >= self._capacity:
+                return True
+            else:
+                return False
         else:
             return False
 
