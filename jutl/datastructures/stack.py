@@ -1,5 +1,7 @@
 # Module imports
 from __future__ import annotations
+from typing import Any
+from jutl.exceptions import EmptyStackError, FullStackError
 from jutl.formatting import apply
 
 # External class visibility
@@ -9,13 +11,14 @@ __all__ = ['Stack']
 class Stack(object):
     """
     Class which implements a
-    first-in; first-out stack object
+    first-in-last-out stack object
     with stack methods.
     """
-    def __init__(self, name: str = None):
+    def __init__(self, name: str = None, capacity: int = None) -> None:
         "Initialization method."
-        self.name = name
-        self._stack = []
+        self.name: str = name
+        self._stack: list = []
+        self._capacity: int = capacity
 
     def __repr__(self) -> str:
         """
@@ -106,29 +109,80 @@ class Stack(object):
         return self.extend(other=other)
 
 
-    def push(self, *args: object):
+    def push(self, *args: object) -> None:
         """
         Pushes an item onto the stack.
         """
         for item in args:
-            self._stack.append(item)
+            if self.is_full:
+                raise FullStackError("The stack is full.")
+            else:
+                self._stack.append(item)
 
 
-    def pop(self) -> object:
+    def pop(self) -> Any:
         """
-        Removes the last added item from the stack.
+        Removes the item at the top of the stack.
         """
-        popped = self.top
-        self._stack.remove(self.top)
-        return popped
+        if self.is_empty:
+            raise EmptyStackError("The stack is empty.")
+        else:
+            popped = self.top
+            self._stack.pop(-1)
+            return popped
+    
+
+    def clear(self) -> None:
+        """
+        Clears the stack.
+        """
+        self._stack.clear()
 
 
     @property
-    def top(self) -> object:
-        if len(self) > 0:
-            return self._stack[-1]
+    def top(self) -> Any:
+        """
+        Returns the item at the top of
+        the stack without popping it.
+        """
+        if self.is_empty:
+            raise EmptyStackError("The stack is empty.")
         else:
-            raise IndexError("Stack is empty.")
+            return self._stack[-1]
+        
+    
+    @property
+    def bottom(self) -> Any:
+        """
+        Returns the item at the bottom
+        of the stack without popping it.
+        """
+        if self.is_empty:
+            raise EmptyStackError("The stack is empty.")
+        else:
+            return self._stack[0]
+
+
+    @property
+    def is_empty(self) -> bool:
+        """
+        Returns whether the stack is empty.
+        """
+        if len(self) == 0:
+            return True
+        else:
+            return False
+
+
+    @property
+    def is_full(self) -> bool:
+        """
+        Returns whether the stack is full.
+        """
+        if len(self) >= self._capacity:
+            return True
+        else:
+            return False
 
 
     def extend(self, other: Stack) -> Stack:
