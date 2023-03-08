@@ -1,8 +1,8 @@
 # Module imports
+from jutlexception import JutilsException
 
 # External class visibility
 __all__ = ['MissingInputError']
 
-class MissingInputError(Exception):
-    def __init__(self, message):
-        self.message = message
+class MissingInputError(JutilsException):
+    pass

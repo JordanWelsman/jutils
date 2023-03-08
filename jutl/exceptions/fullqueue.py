@@ -2,7 +2,7 @@
 from jutlexception import JutilsException
 
 # External class visibility
-__all__ = ['EmptyPipelineError']
+__all__ = ['FullQueueError']
 
-class EmptyPipelineError(JutilsException):
+class FullQueueError(JutilsException):
     pass
