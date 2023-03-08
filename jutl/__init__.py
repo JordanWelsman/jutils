@@ -1,5 +1,5 @@
 # Dunder attributes
-__version__ = "0.5.1"
+__version__ = "0.5.2"
 __author__ = "Jordan Welsman"
 __license__ = "MIT"
 __copyright__ = "Copyright 2023 Jordan Welsman"
