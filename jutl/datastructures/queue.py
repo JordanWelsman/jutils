@@ -1,23 +1,23 @@
 # Module imports
 from __future__ import annotations
 from typing import Any
-from jutl.exceptions import EmptyStackError, FullStackError
+from jutl.exceptions import EmptyQueueError, FullQueueError
 from jutl.formatting import apply
 
 # External class visibility
-__all__ = ['Stack']
+__all__ = ['Queue']
 
 
-class Stack(object):
+class Queue(object):
     """
     Class which implements a
-    first-in-last-out stack object
-    with stack methods.
+    first-in-first-out queue object
+    with queue methods.
     """
     def __init__(self, name: str = None, capacity: int = None) -> None:
         "Initialization method."
         self.name: str = name
-        self._stack: list = []
+        self._queue : list = []
         self._capacity: int = capacity
 
     def __repr__(self) -> str:
@@ -25,54 +25,54 @@ class Stack(object):
         Tells the interpreter how
         to represent this class.
         """
-        if self.name is None:
-            if len(self) == 0:
-                return "Stack()"
-            else:
-                return f"Stack({self._stack})"
+        string = f"{self.__class__.__name__}("
+        if self.name is not None:
+            string += f"{self.name}"
+        if len(self._queue) > 0:
+            string += f", " if self.name is not None else ""
+            string += f"{len(self._queue)}"
+        if self._capacity is not None:
+            string += f"/" if len(self) > 0 else ", " if self.name is not None else ""
+            string += f"{self._capacity}"
+        string += ")"
+        return string
 
-        else:
-            if len(self) == 0:
-                return f"Stack({self.name})"
-            else:
-                return f"Stack({self.name}, {self._stack})"
-        
     def __call__(self) -> list:
         """
         Tells the interpreter what to
         do when an object of this
         class is called directly.
         """
-        return self._stack
-    
+        return self._queue
+
     def __len__(self) -> int:
         """
         Tells the interpreter what to
         consider this class' length.
         """
-        return len(self._stack)
-    
+        return len(self._queue)
+
     def __iter__(self) -> iter:
         """
         Tells the interpreter what to
         iterate over when iterator methods
         are called on this class.
         """
-        raise NotImplementedError("Stacks are not iterable.")
-    
+        raise NotImplementedError("Queues are not iterable.")
+
     def __eq__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles equal operators.
         """
-        return self._stack == other._stack
-    
+        return self._queue == other._queue
+
     def __ne__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles not equal operators.
         """
-        return self._stack != other._stack
+        return self._queue != other._queue
 
     def __gt__(self, other) -> bool:
         """
@@ -109,66 +109,66 @@ class Stack(object):
         return self.extend(other=other)
 
 
-    def push(self, *args: object) -> None:
+    def enqueue(self, *args: object) -> None:
         """
-        Pushes an item onto the stack.
+        Adds an item to the back of the queue.
         """
         for item in args:
             if self.is_full:
-                raise FullStackError("The stack is full.")
+                raise FullQueueError("The queue is full.")
             else:
-                self._stack.append(item)
+                self._queue.append(item)
 
 
-    def pop(self) -> Any:
+    def dequeue(self) -> Any:
         """
-        Removes the item at the top of the stack.
+        Removes the item from at front of the queue.
         """
         if self.is_empty:
-            raise EmptyStackError("The stack is empty.")
+            raise EmptyQueueError("The queue is empty.")
         else:
-            popped = self.top
-            self._stack.pop(-1)
-            return popped
-    
+            dequeued = self.front
+            self._queue.pop(0)
+            return dequeued
+        
 
     def clear(self) -> None:
         """
-        Clears the stack.
+        Clears the queue.
         """
-        self._stack.clear()
+        self._queue.clear()
 
 
     @property
-    def top(self) -> Any:
+    def front(self) -> Any:
         """
-        Returns the item at the top of
-        the stack without popping it.
+        Returns the item at the front of
+        the queue without dequeueing it.
         """
         if self.is_empty:
-            raise EmptyStackError("The stack is empty.")
+            raise EmptyQueueError("The queue is empty.")
         else:
-            return self._stack[-1]
-        
-    
+            return self._queue[0]
+
+
     @property
-    def bottom(self) -> Any:
+    def rear(self) -> Any:
         """
-        Returns the item at the bottom
-        of the stack without popping it.
+        Returns the item at the rear of
+        the queue without dequeueing it.
         """
         if self.is_empty:
-            raise EmptyStackError("The stack is empty.")
+            raise EmptyQueueError("The queue is empty.")
         else:
-            return self._stack[0]
+            return self._queue[-1]
 
 
     @property
     def is_empty(self) -> bool:
         """
-        Returns whether the stack is empty.
+        Returns whether the queue is empty.
         """
-        if len(self) == 0:
+        if len(self) <= 0:
             return True
         else:
             return False
@@ -177,7 +177,7 @@ class Stack(object):
     @property
     def is_full(self) -> bool:
         """
-        Returns whether the stack is full.
+        Returns whether the queue is full.
         """
         if self._capacity is not None:
             if len(self) >= self._capacity:
@@ -188,11 +188,11 @@ class Stack(object):
             return False
 
 
-    def extend(self, other: Stack) -> Stack:
+    def extend(self, other: Queue) -> Queue:
         """
-        Extends this stack with another stack.
+        Extends this queue with another queue.
         """
-        for item in other._stack:
-            self.push(item)
+        for item in other._queue:
+            self.enqueue(item)
         return self
     
