@@ -1,6 +1,5 @@
 # jutils/test/datastructures/test_stack.py
 from jutl.datastructures import Stack
-from time import sleep
 
 test_name = "Test name"
 test_item = "Item"
@@ -21,7 +20,8 @@ class TestInit():
         stack = Stack(test_name)
         assert stack.name == test_name
         del(stack)
-    
+
+
 class TestDunder():
     def test_repr(self):
         "Tests what is output for representation."
