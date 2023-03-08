@@ -65,48 +65,48 @@ class Queue(object):
         Tells the interpreter how this class
         handles equal operators.
         """
-        pass
+        return self._queue == other._queue
 
     def __ne__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles not equal operators.
         """
-        pass
+        return self._queue != other._queue
 
     def __gt__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles greater than operators.
         """
-        pass
+        return len(self) > len(other)
 
     def __ge__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles greater or equal operators.
         """
-        pass
+        return len(self) >= len(other)
 
     def __lt__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles less than operators.
         """
-        pass
+        return len(self) < len(other)
 
     def __le__(self, other) -> bool:
         """
         Tells the interpreter how this class
         handles less than or equal operators.
         """
-        pass
+        return len(self) <= len(other)
 
     def __add__(self, other) -> list:
         """
         Tells the interpreter how to sum these objects.
         """
-        pass
+        return self.extend(other=other)
 
 
     def enqueue(self, *args: object) -> None:
