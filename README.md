@@ -14,8 +14,9 @@
 
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/tags)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/releases)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/JordanWelsman/jutils/pytest.yaml?label=pytest&style=for-the-badge)](https://github.com/JordanWelsman/jutils/actions/workflows/pytest.yaml)
 [![GitHub Release Date](https://img.shields.io/github/release-date/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/wiki/Version-History)
-[![GitHub](https://img.shields.io/github/license/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/blob/main/LICENSE.md)
+[![GitHub License](https://img.shields.io/github/license/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/blob/main/LICENSE.md)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/JordanWelsman/jutils?style=for-the-badge)](https://github.com/JordanWelsman/jutils/commits/main)
 [![GitHub wiki](https://img.shields.io/badge/wiki-jutils-blueviolet?style=for-the-badge)](https://github.com/JordanWelsman/jutils/wiki)
 
