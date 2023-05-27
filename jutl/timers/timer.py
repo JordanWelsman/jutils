@@ -36,7 +36,7 @@ class Timer():
             else:
                 return f"Timer({self.name}, {round(self.total_time, 2)}s)"
     
-    def __call__(self, color: str = None):
+    def __call__(self, precision: int = 2, color: str = None):
         """
         Tells the interpreter what to
         do when an object of this
@@ -44,9 +44,9 @@ class Timer():
         """
         if self.total_time:
             if color:
-                print(apply(text=f"{self.name} total time: {round(self.total_time, 2)}s", text_color=color))
+                print(apply(text=f"{self.name} total time: {round(self.total_time, precision)}s", text_color=color))
             else:
-                print(f"{self.name} total time: {round(self.total_time, 2)}s")
+                print(f"{self.name} total time: {round(self.total_time, precision)}s")
         else:
             print("There is no recorded time.")
     
